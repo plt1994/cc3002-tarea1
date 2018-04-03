@@ -1,3 +1,7 @@
 javadoc
 completar clases de:
 -todas menos Undead
+
+tests
+
+revisar codigo duplicado
