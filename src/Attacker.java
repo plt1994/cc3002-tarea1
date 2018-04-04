@@ -1,5 +1,5 @@
 public abstract class Attacker implements Attackable {
-    private double healthPoints;
+    protected double healthPoints;
     private double attackPoints;
     public static final double STANDARD_MAX_LIFE = 999;
 
@@ -72,15 +72,16 @@ public abstract class Attacker implements Attackable {
      * the amount given is greater than STANDARD_MAX_LIFE
      * @param healthPoints
      */
-    private void setHP(double healthPoints) {
-        this.healthPoints = healthPoints>STANDARD_MAX_LIFE?STANDARD_MAX_LIFE:healthPoints;
-    }
+    abstract void setHP(double healthPoints);
+//    {
+//        this.healthPoints = healthPoints>STANDARD_MAX_LIFE?STANDARD_MAX_LIFE:healthPoints;
+//    }
 
     /**
      * Health points getter
      * @return returns health points of this character
      */
-    private double getHP() {
+    public double getHP() {
         return healthPoints;
     }
 

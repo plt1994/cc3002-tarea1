@@ -13,6 +13,11 @@ public class Undead extends Attacker {
     }
 
     @Override
+    void setHP(double healthPoints) {
+        this.healthPoints = healthPoints>StandardEntity.UNDEAD.getHp()?StandardEntity.UNDEAD.getHp():healthPoints;
+    }
+
+    @Override
     public boolean receiveUndeadAttack(Undead undead) {
         return nothing();
     }
