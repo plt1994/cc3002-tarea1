@@ -9,7 +9,7 @@ public class FireMage extends Human{
     }
     @Override
     void attack(Attackable attackable) {
-
+        attackable.receiveFireMageAttack(this);
     }
 
     @Override
