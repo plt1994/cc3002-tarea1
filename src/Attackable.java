@@ -47,5 +47,10 @@ public interface Attackable {
      */
     boolean receiveKnightAttack(Knight knight);
 
+    /**
+     * Shows the console message: Nothing happens
+     * @return return false always, it means than there is no attack
+     */
+    boolean nothing();
 
 }

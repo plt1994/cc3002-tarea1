@@ -34,7 +34,8 @@ public class Rock implements Attackable {
         return human.hurt(human.getAP());
     }
 
-    private boolean nothing() {
+    @Override
+    public boolean nothing() {
         System.out.println("Nothing happens");
         return false;
     }

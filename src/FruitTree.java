@@ -29,7 +29,8 @@ public class FruitTree implements Attackable {
         return heal(knight);
     }
 
-    private boolean nothing() {
+    @Override
+    public boolean nothing() {
         System.out.println("Nothing happens");
         return false;
     }
