@@ -1,3 +1,6 @@
+/**
+ * Enum Class to give the standard initial HP and AP to Humans i.e Knights, FireMages and Priests
+ */
 public enum StandardHuman {
     HUMAN("Human",10,10),
     KNIGHT("Knight",10,10), FIREMAGE("Fire Mage",10,10), PRIEST("Priest",10,10);

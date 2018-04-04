@@ -1,40 +1,40 @@
 public class Rock implements Attackable {
 
     @Override
-    public void receiveUndeadAttack(Undead undead) {
+    public boolean receiveUndeadAttack(Undead undead) {
         nothing();
     }
 
     @Override
-    public void receiveIceGolemAttack(IceGolem iceGolem) {
+    public boolean receiveIceGolemAttack(IceGolem iceGolem) {
         nothing();
     }
 
     @Override
-    public void receiveGoblinAttack(Goblin goblin) {
+    public boolean receiveGoblinAttack(Goblin goblin) {
         nothing();
     }
 
     @Override
-    public void receivePriestAttack(Priest priest) {
+    public boolean receivePriestAttack(Priest priest) {
         hurt(priest);
     }
 
     @Override
-    public void receiveFireMageAttack(FireMage fireMage) {
+    public boolean receiveFireMageAttack(FireMage fireMage) {
         hurt(fireMage);
     }
 
     @Override
-    public void receiveKnightAttack(Knight knight) {
+    public boolean receiveKnightAttack(Knight knight) {
         hurt(knight);
     }
 
-    private void hurt(Human human) {
+    private boolean hurt(Human human) {
         human.hurt(human.getAP());
     }
 
-    private void nothing() {
+    private boolean nothing() {
         System.out.println("Nothing happens");
     }
 }

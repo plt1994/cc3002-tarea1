@@ -1,39 +1,40 @@
 public class FruitTree implements Attackable {
     @Override
-    public void receiveUndeadAttack(Undead undead) {
-        nothing();
+    public boolean receiveUndeadAttack(Undead undead) {
+        return nothing();
     }
 
     @Override
-    public void receiveIceGolemAttack(IceGolem iceGolem) {
-        nothing();
+    public boolean receiveIceGolemAttack(IceGolem iceGolem) {
+        return nothing();
     }
 
     @Override
-    public void receiveGoblinAttack(Goblin goblin) {
-        goblin.heal(StandardEntity.GOBLIN.getHp()*0.15);
+    public boolean receiveGoblinAttack(Goblin goblin) {
+        return goblin.heal(StandardEntity.GOBLIN.getHp()*0.15);
     }
 
     @Override
-    public void receivePriestAttack(Priest priest) {
-        heal(priest);
+    public boolean receivePriestAttack(Priest priest) {
+        return heal(priest);
     }
 
     @Override
-    public void receiveFireMageAttack(FireMage fireMage) {
-        heal(fireMage);
+    public boolean receiveFireMageAttack(FireMage fireMage) {
+        return heal(fireMage);
     }
 
     @Override
-    public void receiveKnightAttack(Knight knight) {
-        heal(knight);
+    public boolean receiveKnightAttack(Knight knight) {
+        return heal(knight);
     }
 
-    private void nothing() {
+    private boolean nothing() {
         System.out.println("Nothing happens");
+        return false;
     }
 
-    private void heal(Human human) {
-        human.heal(StandardHuman.HUMAN.getHp()*0.30);
+    private boolean heal(Human human) {
+        return human.heal(StandardHuman.HUMAN.getHp()*0.30);
     }
 }

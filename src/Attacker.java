@@ -14,15 +14,16 @@ public abstract class Attacker implements Attackable {
     }
 
     /**
-     * Attacker character's main action, attack an Attackable type, it interacts depending which Attackable
-     * receive the attack.
+     * Attacker character's main action, attack an Attackable
+     * type, it interacts depending which Attackable receive the attack.
      * @param attackable an Attackable type, might be Human(Knight, Fire Mage or Priest) or Goblin, Ice Golem, Undead.
+     * @return true if the attack has been done, false otherwise
      */
-    abstract void attack(Attackable attackable);
+    abstract boolean attack(Attackable attackable);
 
     /**
      * Check if an Attacker has enough health points(greater than 0)
-     * @return true if a character is alive (it has hp>0), false otherwise
+     * @return true if a character is alive (it has hp greater than 0), false otherwise
      */
     public boolean isAlive(){
         return getHP()>0;
@@ -30,33 +31,40 @@ public abstract class Attacker implements Attackable {
 
     /**
      * Shows the console message: This character cannot attack, it's probably dead
+     * @return return false always, it means than there is no attack
      */
-    public void cantAttack(){
+    public boolean cantAttack(){
         System.out.println("This character cannot attack, it's probably dead");
+        return false;
     }
 
     /**
      * Shows the console message: Nothing happens
+     * @return return false always, it means than there is no attack
      */
-    public void nothing(){
+    public boolean nothing(){
         System.out.println("Nothing happens");
+        return false;
     }
 
     /**
      * Reduces the life of the character in the damage amount given, until a minimum of 0
      * @param damage amount of damage that this character receive
+     * @return return true always, it means that damage was done
      */
-    public void hurt(double damage){
+    public boolean hurt(double damage){
         setHP(getHP()>damage? getHP()-damage:0);
+        return true;
     }
 
     /**
      * Cures the life of the character in the heal amount given, until a maximum of STANDARD_MAX_LIFE
      * @param heal amount of heal that this character receive
+     * @return return true always, it means that heal was done
      */
-    public void heal(double heal){
-        //setHP(getHP()+heal);
+    public boolean heal(double heal){
         setHP(getHP()+heal<STANDARD_MAX_LIFE? getHP()+heal:STANDARD_MAX_LIFE);
+        return true;
     }
 
     /**

@@ -9,37 +9,37 @@ public class Knight extends Human{
     }
 
     @Override
-    void attack(Attackable attackable) {
+    boolean attack(Attackable attackable) {
 
     }
 
     @Override
-    public void receiveUndeadAttack(Undead undead) {
+    public boolean receiveUndeadAttack(Undead undead) {
 
     }
 
     @Override
-    public void receiveIceGolemAttack(IceGolem iceGolem) {
+    public boolean receiveIceGolemAttack(IceGolem iceGolem) {
 
     }
 
     @Override
-    public void receiveGoblinAttack(Goblin goblin) {
+    public boolean receiveGoblinAttack(Goblin goblin) {
 
     }
 
     @Override
-    public void receivePriestAttack(Priest priest) {
+    public boolean receivePriestAttack(Priest priest) {
 
     }
 
     @Override
-    public void receiveFireMageAttack(FireMage fireMage) {
+    public boolean receiveFireMageAttack(FireMage fireMage) {
 
     }
 
     @Override
-    public void receiveKnightAttack(Knight knight) {
+    public boolean receiveKnightAttack(Knight knight) {
 
     }
 }

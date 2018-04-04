@@ -7,38 +7,39 @@ public class FireMage extends Human{
     public FireMage(){
         this(StandardHuman.FIREMAGE.getName(), StandardHuman.FIREMAGE.getHp(), StandardHuman.FIREMAGE.getAp());
     }
+
     @Override
-    void attack(Attackable attackable) {
-        attackable.receiveFireMageAttack(this);
+    boolean attack(Attackable attackable) {
+        return isAlive()? attackable.receiveFireMageAttack(this):cantAttack();
     }
 
     @Override
-    public void receiveUndeadAttack(Undead undead) {
-
-    }
-
-    @Override
-    public void receiveIceGolemAttack(IceGolem iceGolem) {
+    public boolean receiveUndeadAttack(Undead undead) {
 
     }
 
     @Override
-    public void receiveGoblinAttack(Goblin goblin) {
+    public boolean receiveIceGolemAttack(IceGolem iceGolem) {
 
     }
 
     @Override
-    public void receivePriestAttack(Priest priest) {
+    public boolean receiveGoblinAttack(Goblin goblin) {
 
     }
 
     @Override
-    public void receiveFireMageAttack(FireMage fireMage) {
+    public boolean receivePriestAttack(Priest priest) {
 
     }
 
     @Override
-    public void receiveKnightAttack(Knight knight) {
+    public boolean receiveFireMageAttack(FireMage fireMage) {
+
+    }
+
+    @Override
+    public boolean receiveKnightAttack(Knight knight) {
 
     }
 }

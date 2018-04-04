@@ -8,43 +8,38 @@ public class Undead extends Attacker {
     }
 
     @Override
-    void attack(Attackable attackable) {
-        if(isAlive()){
-            attackable.receiveUndeadAttack(this);
-        }else{
-            cantAttack();
-        }
-
+    public boolean attack(Attackable attackable) {
+        return isAlive()? attackable.receiveUndeadAttack(this):cantAttack();
     }
 
     @Override
-    public void receiveUndeadAttack(Undead undead) {
-        nothing();
+    public boolean receiveUndeadAttack(Undead undead) {
+        return nothing();
     }
 
     @Override
-    public void receiveIceGolemAttack(IceGolem iceGolem) {
-        this.hurt(iceGolem.getAP()*2);
+    public boolean receiveIceGolemAttack(IceGolem iceGolem) {
+        return this.hurt(iceGolem.getAP()*2);
     }
 
     @Override
-    public void receiveGoblinAttack(Goblin goblin) {
-        nothing();
+    public boolean receiveGoblinAttack(Goblin goblin) {
+        return nothing();
     }
 
     @Override
-    public void receivePriestAttack(Priest priest) {
-        this.hurt(priest.getAP()*5);
+    public boolean receivePriestAttack(Priest priest) {
+        return this.hurt(priest.getAP()*5);
     }
 
     @Override
-    public void receiveFireMageAttack(FireMage fireMage) {
-        this.hurt(fireMage.getAP()*0.5);
+    public boolean receiveFireMageAttack(FireMage fireMage) {
+        return this.hurt(fireMage.getAP()*0.5);
     }
 
     @Override
-    public void receiveKnightAttack(Knight knight) {
-        this.hurt(knight.getAP());
+    public boolean receiveKnightAttack(Knight knight) {
+        return this.hurt(knight.getAP());
     }
 
 }
