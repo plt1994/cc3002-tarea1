@@ -1,26 +1,27 @@
-public class Goblin extends Attacker{
+package MiddleAgeBattle;
 
-    public Goblin(double hp,double ap){
+public class Undead extends Attacker {
+    public Undead(double hp,double ap){
         super(hp,ap);
     }
 
-    public Goblin(){
-        this(StandardEntity.GOBLIN.getHp(), StandardEntity.GOBLIN.getAp());
+    public Undead(){
+        this(StandardEntity.UNDEAD.getHp(), StandardEntity.UNDEAD.getAp());
     }
 
     @Override
-    boolean attack(Attackable attackable) {
-        return isAlive()?attackable.receiveGoblinAttack(this):cantAttack();
+    public boolean attack(Attackable attackable) {
+        return isAlive()? attackable.receiveUndeadAttack(this):cantAttack();
     }
 
     @Override
     void setHP(double healthPoints) {
-        this.healthPoints = healthPoints>StandardEntity.GOBLIN.getHp()?StandardEntity.GOBLIN.getHp():healthPoints;
+        this.healthPoints = healthPoints>StandardEntity.UNDEAD.getHp()?StandardEntity.UNDEAD.getHp():healthPoints;
     }
 
     @Override
     public boolean receiveUndeadAttack(Undead undead) {
-        return this.hurt(undead.getAP());
+        return nothing();
     }
 
     @Override
@@ -35,16 +36,17 @@ public class Goblin extends Attacker{
 
     @Override
     public boolean receivePriestAttack(Priest priest) {
-        return nothing();
+        return this.hurt(priest.getAP()*5);
     }
 
     @Override
     public boolean receiveFireMageAttack(FireMage fireMage) {
-        return this.hurt(fireMage.getAP()*2);
+        return this.hurt(fireMage.getAP()*0.5);
     }
 
     @Override
     public boolean receiveKnightAttack(Knight knight) {
-        return this.hurt(knight.getAP()*1.25);
+        return this.hurt(knight.getAP());
     }
+
 }

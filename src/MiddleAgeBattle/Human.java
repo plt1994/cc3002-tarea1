@@ -1,3 +1,5 @@
+package MiddleAgeBattle;
+
 public abstract class Human extends Attacker{
     private String name;
 

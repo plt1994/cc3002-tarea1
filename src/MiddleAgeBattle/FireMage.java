@@ -1,16 +1,18 @@
-public class Knight extends Human{
+package MiddleAgeBattle;
 
-    public Knight(String name, double hp,double ap){
+public class FireMage extends Human{
+
+    public FireMage(String name, double hp,double ap){
         super(name,hp,ap);
     }
 
-    public Knight(){
-        this(StandardHuman.KNIGHT.getName(), StandardHuman.KNIGHT.getHp(), StandardHuman.KNIGHT.getAp());
+    public FireMage(){
+        this(StandardHuman.FIREMAGE.getName(), StandardHuman.FIREMAGE.getHp(), StandardHuman.FIREMAGE.getAp());
     }
 
     @Override
-    boolean attack(Attackable attackable) {
-        return isAlive()? attackable.receiveKnightAttack(this):cantAttack();
+    public boolean attack(Attackable attackable) {
+        return isAlive()? attackable.receiveFireMageAttack(this):cantAttack();
     }
 
     @Override
@@ -20,12 +22,12 @@ public class Knight extends Human{
 
     @Override
     public boolean receiveIceGolemAttack(IceGolem iceGolem) {
-        return this.hurt(iceGolem.getAP()*1.5);
+        return this.hurt(iceGolem.getAP()*2);
     }
 
     @Override
     public boolean receiveGoblinAttack(Goblin goblin) {
-        return this.hurt(goblin.getAP()*0.5);
+        return this.hurt(goblin.getAP()*1.5);
     }
 
     @Override
@@ -40,6 +42,6 @@ public class Knight extends Human{
 
     @Override
     public boolean receiveKnightAttack(Knight knight) {
-        return this.hurt(knight.getAP());
+        return this.hurt(knight.getAP()*1.5);
     }
 }

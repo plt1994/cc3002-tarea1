@@ -1,7 +1,10 @@
-public class FruitTree implements Attackable {
+package MiddleAgeBattle;
+
+public class Rock implements Attackable {
+
     @Override
     public boolean receiveUndeadAttack(Undead undead) {
-        return nothing();
+       return nothing();
     }
 
     @Override
@@ -11,36 +14,31 @@ public class FruitTree implements Attackable {
 
     @Override
     public boolean receiveGoblinAttack(Goblin goblin) {
-        return goblin.heal(StandardEntity.GOBLIN.getHp()*0.15);
+        return nothing();
     }
 
     @Override
     public boolean receivePriestAttack(Priest priest) {
-        return healHuman(priest);
+        return hurt(priest);
     }
 
     @Override
     public boolean receiveFireMageAttack(FireMage fireMage) {
-        return healHuman(fireMage);
+        return hurt(fireMage);
     }
 
     @Override
     public boolean receiveKnightAttack(Knight knight) {
-        return healHuman(knight);
+        return hurt(knight);
+    }
+
+    private boolean hurt(Human human) {
+        return human.hurt(human.getAP());
     }
 
     @Override
     public boolean nothing() {
         System.out.println("Nothing happens");
         return false;
-    }
-
-    /**
-     * Heals a human, i.e. fireMage, priest or knight, giving an apple from its branches
-     * @param human it could be a fireMage, priest or knight
-     * @return true always even if the human's hp doesn't change
-     */
-    private boolean healHuman(Human human) {
-        return human.heal(StandardHuman.HUMAN.getHp()*0.30);
     }
 }

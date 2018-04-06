@@ -1,15 +1,18 @@
-public class Priest extends Human{
-    public Priest(String name, double hp,double ap){
+package MiddleAgeBattle;
+
+public class Knight extends Human{
+
+    public Knight(String name, double hp,double ap){
         super(name,hp,ap);
     }
 
-    public Priest(){
-        this(StandardHuman.PRIEST.getName(), StandardHuman.PRIEST.getHp(), StandardHuman.PRIEST.getAp());
+    public Knight(){
+        this(StandardHuman.KNIGHT.getName(), StandardHuman.KNIGHT.getHp(), StandardHuman.KNIGHT.getAp());
     }
 
     @Override
-    boolean attack(Attackable attackable) {
-        return isAlive()?attackable.receivePriestAttack(this):cantAttack();
+    public boolean attack(Attackable attackable) {
+        return isAlive()? attackable.receiveKnightAttack(this):cantAttack();
     }
 
     @Override
@@ -19,12 +22,12 @@ public class Priest extends Human{
 
     @Override
     public boolean receiveIceGolemAttack(IceGolem iceGolem) {
-        return this.hurt(iceGolem.getAP()*2);
+        return this.hurt(iceGolem.getAP()*1.5);
     }
 
     @Override
     public boolean receiveGoblinAttack(Goblin goblin) {
-        return this.hurt(goblin.getAP());
+        return this.hurt(goblin.getAP()*0.5);
     }
 
     @Override
@@ -39,6 +42,6 @@ public class Priest extends Human{
 
     @Override
     public boolean receiveKnightAttack(Knight knight) {
-        return nothing();
+        return this.hurt(knight.getAP());
     }
 }

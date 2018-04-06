@@ -1,20 +1,24 @@
-public class Undead extends Attacker {
-    public Undead(double hp,double ap){
-        super(hp,ap);
+package MiddleAgeBattle;
+
+public class IceGolem extends Attacker{
+
+    public IceGolem(double hp,double ap){
+        super(hp, ap);
     }
 
-    public Undead(){
-        this(StandardEntity.UNDEAD.getHp(), StandardEntity.UNDEAD.getAp());
+    public IceGolem(){
+        this(StandardEntity.ICEGOLEM.getHp(), StandardEntity.ICEGOLEM.getAp());
     }
 
     @Override
     public boolean attack(Attackable attackable) {
-        return isAlive()? attackable.receiveUndeadAttack(this):cantAttack();
+        return isAlive()? attackable.receiveIceGolemAttack(this):cantAttack();
     }
 
     @Override
     void setHP(double healthPoints) {
-        this.healthPoints = healthPoints>StandardEntity.UNDEAD.getHp()?StandardEntity.UNDEAD.getHp():healthPoints;
+        this.healthPoints = healthPoints>StandardEntity.ICEGOLEM.getHp()?StandardEntity.ICEGOLEM.getHp():healthPoints;
+
     }
 
     @Override
@@ -24,7 +28,7 @@ public class Undead extends Attacker {
 
     @Override
     public boolean receiveIceGolemAttack(IceGolem iceGolem) {
-        return this.hurt(iceGolem.getAP()*2);
+        return this.hurt(iceGolem.getAP());
     }
 
     @Override
@@ -34,17 +38,16 @@ public class Undead extends Attacker {
 
     @Override
     public boolean receivePriestAttack(Priest priest) {
-        return this.hurt(priest.getAP()*5);
+        return nothing();
     }
 
     @Override
     public boolean receiveFireMageAttack(FireMage fireMage) {
-        return this.hurt(fireMage.getAP()*0.5);
+        return this.hurt(fireMage.getAP()*5);
     }
 
     @Override
     public boolean receiveKnightAttack(Knight knight) {
-        return this.hurt(knight.getAP());
+        return this.hurt(knight.getAP()*0.5);
     }
-
 }

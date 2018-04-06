@@ -1,16 +1,17 @@
-public class FireMage extends Human{
+package MiddleAgeBattle;
 
-    public FireMage(String name, double hp,double ap){
+public class Priest extends Human{
+    public Priest(String name, double hp,double ap){
         super(name,hp,ap);
     }
 
-    public FireMage(){
-        this(StandardHuman.FIREMAGE.getName(), StandardHuman.FIREMAGE.getHp(), StandardHuman.FIREMAGE.getAp());
+    public Priest(){
+        this(StandardHuman.PRIEST.getName(), StandardHuman.PRIEST.getHp(), StandardHuman.PRIEST.getAp());
     }
 
     @Override
-    boolean attack(Attackable attackable) {
-        return isAlive()? attackable.receiveFireMageAttack(this):cantAttack();
+    public boolean attack(Attackable attackable) {
+        return isAlive()?attackable.receivePriestAttack(this):cantAttack();
     }
 
     @Override
@@ -25,7 +26,7 @@ public class FireMage extends Human{
 
     @Override
     public boolean receiveGoblinAttack(Goblin goblin) {
-        return this.hurt(goblin.getAP()*1.5);
+        return this.hurt(goblin.getAP());
     }
 
     @Override
@@ -40,6 +41,6 @@ public class FireMage extends Human{
 
     @Override
     public boolean receiveKnightAttack(Knight knight) {
-        return this.hurt(knight.getAP()*1.5);
+        return nothing();
     }
 }
