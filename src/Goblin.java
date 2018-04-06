@@ -10,7 +10,7 @@ public class Goblin extends Attacker{
 
     @Override
     boolean attack(Attackable attackable) {
-        return attackable.receiveGoblinAttack(this);
+        return isAlive()?attackable.receiveGoblinAttack(this):cantAttack();
     }
 
     @Override
@@ -20,31 +20,31 @@ public class Goblin extends Attacker{
 
     @Override
     public boolean receiveUndeadAttack(Undead undead) {
-        return false;
+        return this.hurt(undead.getAP());
     }
 
     @Override
     public boolean receiveIceGolemAttack(IceGolem iceGolem) {
-        return false;
+        return this.hurt(iceGolem.getAP()*2);
     }
 
     @Override
     public boolean receiveGoblinAttack(Goblin goblin) {
-        return false;
+        return nothing();
     }
 
     @Override
     public boolean receivePriestAttack(Priest priest) {
-        return false;
+        return nothing();
     }
 
     @Override
     public boolean receiveFireMageAttack(FireMage fireMage) {
-        return false;
+        return this.hurt(fireMage.getAP()*2);
     }
 
     @Override
     public boolean receiveKnightAttack(Knight knight) {
-        return false;
+        return this.hurt(knight.getAP()*1.25);
     }
 }

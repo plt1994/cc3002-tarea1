@@ -10,7 +10,7 @@ public class IceGolem extends Attacker{
 
     @Override
     boolean attack(Attackable attackable) {
-        return attackable.receiveIceGolemAttack(this);
+        return isAlive()? attackable.receiveIceGolemAttack(this):cantAttack();
     }
 
     @Override
@@ -21,31 +21,31 @@ public class IceGolem extends Attacker{
 
     @Override
     public boolean receiveUndeadAttack(Undead undead) {
-        return false;
+        return nothing();
     }
 
     @Override
     public boolean receiveIceGolemAttack(IceGolem iceGolem) {
-        return false;
+        return this.hurt(iceGolem.getAP());
     }
 
     @Override
     public boolean receiveGoblinAttack(Goblin goblin) {
-        return false;
+        return nothing();
     }
 
     @Override
     public boolean receivePriestAttack(Priest priest) {
-        return false;
+        return nothing();
     }
 
     @Override
     public boolean receiveFireMageAttack(FireMage fireMage) {
-        return false;
+        return this.hurt(fireMage.getAP()*5);
     }
 
     @Override
     public boolean receiveKnightAttack(Knight knight) {
-        return false;
+        return this.hurt(knight.getAP()*0.5);
     }
 }

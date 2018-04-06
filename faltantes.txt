@@ -1,12 +1,1 @@
-javadoc listo (excepto el heal de FruitTree), no agregado en subclases
-
-completar clases de:
--Knight
--Priest
--FireMage
--IceGolem
--Goblin
--FruitTree: revisar método heal, sin javadoc
-tests
-
 revisar codigo duplicado

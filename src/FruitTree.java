@@ -35,6 +35,11 @@ public class FruitTree implements Attackable {
         return false;
     }
 
+    /**
+     * Heals a human, i.e. fireMage, priest or knight, giving an apple from its branches
+     * @param human it could be a fireMage, priest or knight
+     * @return true always even if the human's hp doesn't change
+     */
     private boolean healHuman(Human human) {
         return human.heal(StandardHuman.HUMAN.getHp()*0.30);
     }
