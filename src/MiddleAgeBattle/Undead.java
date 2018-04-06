@@ -25,11 +25,6 @@ public class Undead extends Attacker {
     }
 
     @Override
-    public boolean receiveIceGolemAttack(IceGolem iceGolem) {
-        return this.hurt(iceGolem.getAP()*2);
-    }
-
-    @Override
     public boolean receiveGoblinAttack(Goblin goblin) {
         return nothing();
     }

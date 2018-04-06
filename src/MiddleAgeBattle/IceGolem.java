@@ -37,11 +37,6 @@ public class IceGolem extends Attacker{
     }
 
     @Override
-    public boolean receivePriestAttack(Priest priest) {
-        return nothing();
-    }
-
-    @Override
     public boolean receiveFireMageAttack(FireMage fireMage) {
         return this.hurt(fireMage.getAP()*5);
     }
