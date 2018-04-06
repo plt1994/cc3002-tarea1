@@ -6,5 +6,14 @@ public abstract class Human extends Attacker{
         this.name = name;
     }
 
+    @Override
+    void setHP(double healthPoints) {
+        this.healthPoints = healthPoints>StandardHuman.HUMAN.getHp()?StandardHuman.HUMAN.getHp():healthPoints;
+    }
+
+    public String getName(){
+        return name;
+    }
+
 
 }

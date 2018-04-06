@@ -2,8 +2,8 @@
  * Enum Class to give the standard initial HP and AP to Humans i.e Knights, FireMages and Priests
  */
 public enum StandardHuman {
-    HUMAN("Human",150,10),
-    KNIGHT("Knight",150,50), FIREMAGE("Fire Mage",150,40), PRIEST("Priest",200,10);
+    HUMAN("Human",1000,1000),
+    KNIGHT("Knight",1000,150), FIREMAGE("Fire Mage",1000,100), PRIEST("Priest",1000,50);
 
     private String name;
     private double hp;

@@ -2,7 +2,7 @@
  * Enum Class to give the standard initial HP and AP to Goblins, Ice Golems and Undeads
  */
 public enum StandardEntity {
-    GOBLIN(40,30), ICEGOLEM(200,10), UNDEAD(100,20);
+    GOBLIN(500,50), ICEGOLEM(2000,10), UNDEAD(800,20);
 
     private double hp;
     private double ap;

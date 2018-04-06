@@ -10,12 +10,7 @@ public class Knight extends Human{
 
     @Override
     boolean attack(Attackable attackable) {
-        return false;
-    }
-
-    @Override
-    void setHP(double healthPoints) {
-
+        return attackable.receiveKnightAttack(this);
     }
 
     @Override

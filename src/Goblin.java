@@ -10,12 +10,12 @@ public class Goblin extends Attacker{
 
     @Override
     boolean attack(Attackable attackable) {
-        return false;
+        return attackable.receiveGoblinAttack(this);
     }
 
     @Override
     void setHP(double healthPoints) {
-
+        this.healthPoints = healthPoints>StandardEntity.GOBLIN.getHp()?StandardEntity.GOBLIN.getHp():healthPoints;
     }
 
     @Override

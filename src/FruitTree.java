@@ -16,17 +16,17 @@ public class FruitTree implements Attackable {
 
     @Override
     public boolean receivePriestAttack(Priest priest) {
-        return heal(priest);
+        return healHuman(priest);
     }
 
     @Override
     public boolean receiveFireMageAttack(FireMage fireMage) {
-        return heal(fireMage);
+        return healHuman(fireMage);
     }
 
     @Override
     public boolean receiveKnightAttack(Knight knight) {
-        return heal(knight);
+        return healHuman(knight);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class FruitTree implements Attackable {
         return false;
     }
 
-    private boolean heal(Human human) {
+    private boolean healHuman(Human human) {
         return human.heal(StandardHuman.HUMAN.getHp()*0.30);
     }
 }

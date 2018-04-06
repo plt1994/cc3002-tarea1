@@ -10,11 +10,12 @@ public class IceGolem extends Attacker{
 
     @Override
     boolean attack(Attackable attackable) {
-        return false;
+        return attackable.receiveIceGolemAttack(this);
     }
 
     @Override
     void setHP(double healthPoints) {
+        this.healthPoints = healthPoints>StandardEntity.ICEGOLEM.getHp()?StandardEntity.ICEGOLEM.getHp():healthPoints;
 
     }
 
