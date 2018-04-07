@@ -4,16 +4,16 @@ package middleAgeBattle;
  * A Human is an attackable that have a name and dreams <3
  * @author plt1994
  */
-public abstract class Human extends Attacker{
+public abstract class AbstractHuman extends AbstractAttacker implements IHuman {
     private String name;
 
     /**
-     * Human constructor, to make other humans constructors easier
+     * AbstractHuman constructor, to make other humans constructors easier
      * @param name human's name
      * @param hp human's health points
      * @param ap human's attack points
      */
-    protected Human(String name, double hp,double ap){
+    protected AbstractHuman(String name, double hp, double ap){
         super(hp,ap);
         this.name = name;
     }

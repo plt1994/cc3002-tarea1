@@ -1,10 +1,10 @@
 package middleAgeBattle;
 
 /**
- * A fire mage is a human that can attack Attackable objects
+ * A fire mage is a human that can attack IAttackable objects
  * @author plt1994
  */
-public class FireMage extends Human{
+public class FireMage extends AbstractHuman {
 
     /**
      * FireMage main constructor
@@ -24,8 +24,8 @@ public class FireMage extends Human{
     }
 
     @Override
-    public boolean attack(Attackable attackable) {
-        return isAlive()? attackable.receiveFireMageAttack(this):cantAttack();
+    public boolean attack(IAttackable IAttackable) {
+        return isAlive()? IAttackable.receiveFireMageAttack(this):cantAttack();
     }
 
     @Override

@@ -1,11 +1,11 @@
 package middleAgeBattle;
 
 /**
- * A Priest is a human that can attack Attackable objects... does he can? yeah
+ * A Priest is a human that can attack IAttackable objects... does he can? yeah
  * but just Undeads, Fruit trees and Rock (y) he is a good guy
  * @author plt1994
  */
-public class Priest extends Human{
+public class Priest extends AbstractHuman {
     /**
      * Priest main constructor
      * @param name Character's name
@@ -24,8 +24,8 @@ public class Priest extends Human{
     }
 
     @Override
-    public boolean attack(Attackable attackable) {
-        return isAlive()?attackable.receivePriestAttack(this):cantAttack();
+    public boolean attack(IAttackable IAttackable) {
+        return isAlive()? IAttackable.receivePriestAttack(this):cantAttack();
     }
 
     @Override

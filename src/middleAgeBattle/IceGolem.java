@@ -1,10 +1,10 @@
 package middleAgeBattle;
 
 /**
- * An Ice golem is a... golem made of ice (?) that can attack Attackable objects
+ * An Ice golem is a... golem made of ice (?) that can attack IAttackable objects
  * @author plt1994
  */
-public class IceGolem extends Attacker{
+public class IceGolem extends AbstractAttacker {
 
     /**
      * IceGolem main constructor
@@ -23,8 +23,8 @@ public class IceGolem extends Attacker{
     }
 
     @Override
-    public boolean attack(Attackable attackable) {
-        return isAlive()? attackable.receiveIceGolemAttack(this):cantAttack();
+    public boolean attack(IAttackable IAttackable) {
+        return isAlive()? IAttackable.receiveIceGolemAttack(this):cantAttack();
     }
 
     @Override

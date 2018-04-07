@@ -4,7 +4,7 @@ package middleAgeBattle;
  * Its not dead, that's what we think
  * @author plt1994
  */
-public class Undead extends Attacker {
+public class Undead extends AbstractAttacker {
     /**
      * Undead main constructor
      * @param hp health points
@@ -22,8 +22,8 @@ public class Undead extends Attacker {
     }
 
     @Override
-    public boolean attack(Attackable attackable) {
-        return isAlive()? attackable.receiveUndeadAttack(this):cantAttack();
+    public boolean attack(IAttackable IAttackable) {
+        return isAlive()? IAttackable.receiveUndeadAttack(this):cantAttack();
     }
 
     @Override

@@ -1,9 +1,9 @@
 package middleAgeBattle;
 /**
- * A knight is a human that can attack Attackable objects, but not priest! never!
+ * A knight is a human that can attack IAttackable objects, but not priest! never!
  * @author plt1994
  */
-public class Knight extends Human{
+public class Knight extends AbstractHuman {
 
     /**
      * Knight main constructor
@@ -23,8 +23,8 @@ public class Knight extends Human{
     }
 
     @Override
-    public boolean attack(Attackable attackable) {
-        return isAlive()? attackable.receiveKnightAttack(this):cantAttack();
+    public boolean attack(IAttackable IAttackable) {
+        return isAlive()? IAttackable.receiveKnightAttack(this):cantAttack();
     }
 
     @Override

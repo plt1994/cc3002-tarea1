@@ -3,22 +3,7 @@ package middleAgeBattle;
  * A rock is an special rock than will rock your head if you try to hit it, if you are human.
  * @author plt1994
  */
-public class Rock implements Attackable {
-
-    @Override
-    public boolean receiveUndeadAttack(Undead undead) {
-       return nothing();
-    }
-
-    @Override
-    public boolean receiveIceGolemAttack(IceGolem iceGolem) {
-        return nothing();
-    }
-
-    @Override
-    public boolean receiveGoblinAttack(Goblin goblin) {
-        return nothing();
-    }
+public class Rock extends AbstractAttackable {
 
     @Override
     public boolean receivePriestAttack(Priest priest) {
@@ -35,7 +20,7 @@ public class Rock implements Attackable {
         return hurt(knight);
     }
 
-    private boolean hurt(Human human) {
+    private boolean hurt(IHuman human) {
         return human.hurt(human.getAP());
     }
 

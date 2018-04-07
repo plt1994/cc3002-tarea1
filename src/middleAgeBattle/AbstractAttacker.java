@@ -4,30 +4,30 @@ package middleAgeBattle;
  * Attackers abstract class to describe attackers behavior
  * @author plt1994
  */
-public abstract class Attacker implements Attackable {
+public abstract class AbstractAttacker implements IAttacker {
     protected double healthPoints;
     private double attackPoints;
 
     /**
-     * middleAgeBattle.Attacker's main constructor
+     * middleAgeBattle.AbstractAttacker's main constructor
      * @param hp Character's health points
      * @param ap Character's attack points
      */
-    public Attacker(double hp,double ap){
+    public AbstractAttacker(double hp, double ap){
         setHP(hp);
         setAP(ap);
     }
 
     /**
-     * middleAgeBattle.Attacker character's main action, attack an middleAgeBattle.Attackable
-     * type, it interacts depending which middleAgeBattle.Attackable receive the attack.
-     * @param attackable an middleAgeBattle.Attackable type, might be middleAgeBattle.Human(middleAgeBattle.Knight, Fire Mage or middleAgeBattle.Priest) or middleAgeBattle.Goblin, Ice Golem, middleAgeBattle.Undead.
+     * middleAgeBattle.AbstractAttacker character's main action, attack an middleAgeBattle.IAttackable
+     * type, it interacts depending which middleAgeBattle.IAttackable receive the attack.
+     * @param IAttackable an middleAgeBattle.IAttackable type, might be middleAgeBattle.AbstractHuman(middleAgeBattle.Knight, Fire Mage or middleAgeBattle.Priest) or middleAgeBattle.Goblin, Ice Golem, middleAgeBattle.Undead.
      * @return true if the attack has been done, false otherwise
      */
-    abstract boolean attack(Attackable attackable);
+    abstract boolean attack(IAttackable IAttackable);
 
     /**
-     * Check if an middleAgeBattle.Attacker has enough health points(greater than 0)
+     * Check if an middleAgeBattle.AbstractAttacker has enough health points(greater than 0)
      * @return true if a character is alive (it has hp greater than 0), false otherwise
      */
     public boolean isAlive(){

@@ -1,10 +1,10 @@
 package middleAgeBattle;
 
 /**
- * A goblin is an attacker that can attack Attackable objects
+ * A goblin is an attacker that can attack IAttackable objects
  * @author plt1994
  */
-public class Goblin extends Attacker{
+public class Goblin extends AbstractAttacker {
 
     /**
      * Goblin main constructor
@@ -23,8 +23,8 @@ public class Goblin extends Attacker{
     }
 
     @Override
-    public boolean attack(Attackable attackable) {
-        return isAlive()?attackable.receiveGoblinAttack(this):cantAttack();
+    public boolean attack(IAttackable IAttackable) {
+        return isAlive()? IAttackable.receiveGoblinAttack(this):cantAttack();
     }
 
     @Override

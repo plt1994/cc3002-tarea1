@@ -4,16 +4,7 @@ package middleAgeBattle;
  * A fruit tree can give apples if a human or a goblin hit it
  * @author plt1994
  */
-public class FruitTree implements Attackable {
-    @Override
-    public boolean receiveUndeadAttack(Undead undead) {
-        return nothing();
-    }
-
-    @Override
-    public boolean receiveIceGolemAttack(IceGolem iceGolem) {
-        return nothing();
-    }
+public class FruitTree extends AbstractAttackable {
 
     @Override
     public boolean receiveGoblinAttack(Goblin goblin) {
@@ -41,7 +32,7 @@ public class FruitTree implements Attackable {
         return false;
     }
 
-    private boolean healHuman(Human human) {
+    private boolean healHuman(IHuman human) {
         return human.heal(StandardHuman.HUMAN.getHp()*0.30);
     }
 }
