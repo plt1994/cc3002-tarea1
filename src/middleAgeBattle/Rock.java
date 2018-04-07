@@ -1,5 +1,8 @@
 package middleAgeBattle;
-
+/**
+ * A rock is an special rock than will rock your head if you try to hit it, if you are human.
+ * @author plt1994
+ */
 public class Rock implements Attackable {
 
     @Override

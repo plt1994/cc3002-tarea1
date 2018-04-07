@@ -1,10 +1,22 @@
 package middleAgeBattle;
 
+/**
+ * Its not dead, that's what we think
+ * @author plt1994
+ */
 public class Undead extends Attacker {
+    /**
+     * Undead main constructor
+     * @param hp health points
+     * @param ap attack points
+     */
     public Undead(double hp,double ap){
         super(hp,ap);
     }
 
+    /**
+     * Undead standard constructor
+     */
     public Undead(){
         this(StandardEntity.UNDEAD.getHp(), StandardEntity.UNDEAD.getAp());
     }

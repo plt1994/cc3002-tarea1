@@ -1,11 +1,23 @@
 package middleAgeBattle;
-
+/**
+ * A knight is a human that can attack Attackable objects, but not priest! never!
+ * @author plt1994
+ */
 public class Knight extends Human{
 
+    /**
+     * Knight main constructor
+     * @param name name of the knight
+     * @param hp health points of the knight
+     * @param ap attack of the knight
+     */
     public Knight(String name, double hp,double ap){
         super(name,hp,ap);
     }
 
+    /**
+     * knight standard constructor
+     */
     public Knight(){
         this(StandardHuman.KNIGHT.getName(), StandardHuman.KNIGHT.getHp(), StandardHuman.KNIGHT.getAp());
     }

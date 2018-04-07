@@ -37,6 +37,9 @@ public class Tests {
     }
 
 
+    /**
+     * Test to check correct initialization of attacker's constructors
+     */
     @Test
     public void defaultConstructorTest() {
         Assert.assertEquals(new Knight().getHP(),1000,0.0);
@@ -56,6 +59,9 @@ public class Tests {
         Assert.assertEquals(new Priest().getName(),"middleAgeBattle.Priest");
     }
 
+    /**
+     * test to check attackers main constructors
+     */
     @Test
     public void constructorTest() {
         Knight k = new Knight("k",1,2);

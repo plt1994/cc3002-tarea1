@@ -1,11 +1,23 @@
 package middleAgeBattle;
 
+/**
+ * An Ice golem is a... golem made of ice (?) that can attack Attackable objects
+ * @author plt1994
+ */
 public class IceGolem extends Attacker{
 
+    /**
+     * IceGolem main constructor
+     * @param hp Character's health points
+     * @param ap Character's attack points
+     */
     public IceGolem(double hp,double ap){
         super(hp, ap);
     }
 
+    /**
+     * IceGolem standard constructor
+     */
     public IceGolem(){
         this(StandardEntity.ICEGOLEM.getHp(), StandardEntity.ICEGOLEM.getAp());
     }

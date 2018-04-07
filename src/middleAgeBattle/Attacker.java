@@ -1,9 +1,12 @@
 package middleAgeBattle;
 
+/**
+ * Attackers abstract class to describe attackers behavior
+ * @author plt1994
+ */
 public abstract class Attacker implements Attackable {
     protected double healthPoints;
     private double attackPoints;
-    public static final double STANDARD_MAX_LIFE = 999;
 
     /**
      * middleAgeBattle.Attacker's main constructor
@@ -65,7 +68,7 @@ public abstract class Attacker implements Attackable {
      * @return return true always, it means that heal was done
      */
     public boolean heal(double heal){
-        setHP(getHP()+heal<STANDARD_MAX_LIFE? getHP()+heal:STANDARD_MAX_LIFE);
+        setHP(getHP()+heal);
         return true;
     }
 
@@ -75,9 +78,6 @@ public abstract class Attacker implements Attackable {
      * @param healthPoints
      */
     abstract void setHP(double healthPoints);
-//    {
-//        this.healthPoints = healthPoints>STANDARD_MAX_LIFE?STANDARD_MAX_LIFE:healthPoints;
-//    }
 
     /**
      * Health points getter
@@ -117,7 +117,6 @@ public abstract class Attacker implements Attackable {
     public boolean receivePriestAttack(Priest priest) {
         return nothing();
     }
-
 
     @Override
     public boolean receiveFireMageAttack(FireMage fireMage) {

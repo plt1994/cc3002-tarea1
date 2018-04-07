@@ -1,5 +1,9 @@
 package middleAgeBattle;
 
+/**
+ * Attackable interface to describe common relationship between them and attackers
+ * @author plt1994
+ */
 public interface Attackable {
     /**
      * Method to receive an attack from an middleAgeBattle.Undead

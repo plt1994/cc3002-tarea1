@@ -2,6 +2,7 @@ package middleAgeBattle;
 
 /**
  * Enum Class to give the standard initial HP and AP to Humans i.e Knights, FireMages and Priests
+ * @autor plt1994
  */
 public enum StandardHuman {
     HUMAN("middleAgeBattle.Human",1000,1000),

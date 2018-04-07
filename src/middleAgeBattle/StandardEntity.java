@@ -2,6 +2,7 @@ package middleAgeBattle;
 
 /**
  * Enum Class to give the standard initial HP and AP to Goblins, Ice Golems and Undeads
+ * @author plt1994
  */
 public enum StandardEntity {
     GOBLIN(500,50), ICEGOLEM(2000,10), UNDEAD(800,20);
