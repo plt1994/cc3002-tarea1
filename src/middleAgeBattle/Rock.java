@@ -23,10 +23,4 @@ public class Rock extends AbstractAttackable {
     private boolean hurt(IHuman human) {
         return human.hurt(human.getAP());
     }
-
-    @Override
-    public boolean nothing() {
-        System.out.println("Nothing happens");
-        return false;
-    }
 }

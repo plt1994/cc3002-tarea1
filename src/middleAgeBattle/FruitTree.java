@@ -26,12 +26,6 @@ public class FruitTree extends AbstractAttackable {
         return healHuman(knight);
     }
 
-    @Override
-    public boolean nothing() {
-        System.out.println("Nothing happens");
-        return false;
-    }
-
     private boolean healHuman(IHuman human) {
         return human.heal(StandardHuman.HUMAN.getHp()*0.30);
     }

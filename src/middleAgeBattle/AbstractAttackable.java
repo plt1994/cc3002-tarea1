@@ -21,4 +21,10 @@ public abstract class AbstractAttackable implements IAttackable{
         return nothing();
     }
 
+    @Override
+    public boolean nothing() {
+        System.out.println("Nothing happens");
+        return false;
+    }
+
 }
