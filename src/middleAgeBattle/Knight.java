@@ -1,4 +1,4 @@
-package MiddleAgeBattle;
+package middleAgeBattle;
 
 public class Knight extends Human{
 

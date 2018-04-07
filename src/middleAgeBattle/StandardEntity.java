@@ -1,4 +1,4 @@
-package MiddleAgeBattle;
+package middleAgeBattle;
 
 /**
  * Enum Class to give the standard initial HP and AP to Goblins, Ice Golems and Undeads

@@ -1,10 +1,10 @@
-package Test;
+package test;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import MiddleAgeBattle.*;
+import middleAgeBattle.*;
 
 import static org.junit.Assert.*;
 
@@ -51,9 +51,9 @@ public class Tests {
         Assert.assertEquals(new Goblin().getAP(),50,0.0);
         Assert.assertEquals(new IceGolem().getAP(),10,0.0);
         Assert.assertEquals(new Undead().getAP(),20,0.0);
-        Assert.assertEquals(new Knight().getName(),"MiddleAgeBattle.Knight");
+        Assert.assertEquals(new Knight().getName(),"middleAgeBattle.Knight");
         Assert.assertEquals(new FireMage().getName(),"Fire Mage");
-        Assert.assertEquals(new Priest().getName(),"MiddleAgeBattle.Priest");
+        Assert.assertEquals(new Priest().getName(),"middleAgeBattle.Priest");
     }
 
     @Test

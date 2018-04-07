@@ -1,4 +1,4 @@
-package MiddleAgeBattle;
+package middleAgeBattle;
 
 public class Undead extends Attacker {
     public Undead(double hp,double ap){

@@ -1,4 +1,4 @@
-package MiddleAgeBattle;
+package middleAgeBattle;
 
 public class Priest extends Human{
     public Priest(String name, double hp,double ap){

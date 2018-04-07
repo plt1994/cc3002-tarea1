@@ -1,4 +1,4 @@
-package MiddleAgeBattle;
+package middleAgeBattle;
 
 public abstract class Attacker implements Attackable {
     protected double healthPoints;
@@ -6,7 +6,7 @@ public abstract class Attacker implements Attackable {
     public static final double STANDARD_MAX_LIFE = 999;
 
     /**
-     * MiddleAgeBattle.Attacker's main constructor
+     * middleAgeBattle.Attacker's main constructor
      * @param hp Character's health points
      * @param ap Character's attack points
      */
@@ -16,15 +16,15 @@ public abstract class Attacker implements Attackable {
     }
 
     /**
-     * MiddleAgeBattle.Attacker character's main action, attack an MiddleAgeBattle.Attackable
-     * type, it interacts depending which MiddleAgeBattle.Attackable receive the attack.
-     * @param attackable an MiddleAgeBattle.Attackable type, might be MiddleAgeBattle.Human(MiddleAgeBattle.Knight, Fire Mage or MiddleAgeBattle.Priest) or MiddleAgeBattle.Goblin, Ice Golem, MiddleAgeBattle.Undead.
+     * middleAgeBattle.Attacker character's main action, attack an middleAgeBattle.Attackable
+     * type, it interacts depending which middleAgeBattle.Attackable receive the attack.
+     * @param attackable an middleAgeBattle.Attackable type, might be middleAgeBattle.Human(middleAgeBattle.Knight, Fire Mage or middleAgeBattle.Priest) or middleAgeBattle.Goblin, Ice Golem, middleAgeBattle.Undead.
      * @return true if the attack has been done, false otherwise
      */
     abstract boolean attack(Attackable attackable);
 
     /**
-     * Check if an MiddleAgeBattle.Attacker has enough health points(greater than 0)
+     * Check if an middleAgeBattle.Attacker has enough health points(greater than 0)
      * @return true if a character is alive (it has hp greater than 0), false otherwise
      */
     public boolean isAlive(){
